@@ -1,6 +1,6 @@
 # From Forecasts to Stock Decisions
 
-Probabilistic safety-stock design across Walmart stores using the M5 dataset.
+### Project Title: Probabilistic safety-stock design across Walmart stores using the M5 dataset.
 
 This project is part of the AAI 500 Probability and Statistics for AI course in the Master of Science (M.S) in Applied Artificial Intelligence program at the University of San Diego.
 
@@ -18,28 +18,68 @@ Our central research question is:
 
 ## Installation
 
-Clone the repository and create a Python environment:
+### 1. Clone the repository
 
 ```bash
 git clone <repository-url>
 cd <repository-folder>
-
-python -m venv .venv
-source .venv/bin/activate       # macOS/Linux
-# .venv\Scripts\activate        # Windows
-
-pip install -r requirements.txt
 ```
 
-Download the M5 files from the [Kaggle M5 Forecasting Accuracy competition](https://www.kaggle.com/competitions/m5-forecasting-accuracy/data). Place the downloaded files in `data/raw/`. The data files are not included in this repository because of their size and Kaggle competition terms.
+### 2. Create the Python environment
 
-Start JupyterLab with:
+```bash
+python3.11 -m venv .venv
+source .venv/bin/activate       # macOS/Linux
+# .venv\Scripts\Activate.ps1   # Windows PowerShell
+
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 3. Authenticate with Kaggle
+
+The M5 files are subject to Kaggle's competition rules. Before the first download:
+
+1. Sign in to [Kaggle](https://www.kaggle.com/).
+2. Open the [M5 Forecasting - Accuracy data page](https://www.kaggle.com/competitions/m5-forecasting-accuracy/data) and accept the competition rules.
+3. Generate an API token from [Kaggle API settings](https://www.kaggle.com/settings/api).
+4. Authenticate on your computer:
+
+```bash
+python -c "import kagglehub; kagglehub.login()"
+```
+
+Never commit a Kaggle token or credential file to this repository.
+
+### 4. Download and verify the data
+
+Run the project download helper from the repository root:
+
+```bash
+python scripts/download_data.py
+```
+
+The script downloads the five official competition files into `data/raw/`, verifies their checksums, and skips files that are already valid. The raw CSV files are excluded from Git because of their size and Kaggle's competition terms.
+
+Complete this step before running the analysis notebooks.
+
+### 5. Start the project notebooks
+
+Start JupyterLab from the repository root:
 
 ```bash
 jupyter lab
 ```
 
-The complete environment and data instructions will also be documented in `setup.md` as the project develops.
+Open the notebooks in numeric order, beginning with:
+
+```text
+notebooks/01_data_audit_and_eda.ipynb
+```
+
+The first notebook also checks the local data and calls the download helper automatically if a required file is missing or invalid. Once the data audit passes, continue developing the remaining notebooks and project sections in their documented order.
+
+See [`setup.md`](setup.md) for the complete environment, authentication, data-download, and verification instructions.
 
 ## Team members and contributors
 
@@ -136,9 +176,14 @@ The results will apply only to the selected product-store series and the assumpt
 ├── README.md
 ├── setup.md
 ├── requirements.txt
+├── docs/
+│   ├── README.md
+│   └── project_structure.md
 ├── data/
 │   ├── raw/              # Downloaded M5 files, not committed to GitHub
 │   └── processed/        # Generated analysis-ready data, if needed
+├── scripts/
+│   └── download_data.py  # Kaggle download and checksum verification
 ├── notebooks/
 │   ├── 01_data_audit_and_eda.ipynb
 │   ├── 02_forecasting.ipynb
