@@ -195,6 +195,7 @@ The results will apply only to the selected product-store series and the assumpt
 │   ├── inventory_simulation.py
 │   └── evaluation.py
 ├── reports/
+│   ├── initial_data_audit_summary.md
 │   └── figures/
 └── LICENSE
 ```

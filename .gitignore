@@ -17,3 +17,6 @@ data/processed/*
 # Generated report figures
 reports/figures/*
 !reports/figures/.gitkeep
+!reports/figures/initial_data_audit/
+reports/figures/initial_data_audit/*
+!reports/figures/initial_data_audit/*.png
