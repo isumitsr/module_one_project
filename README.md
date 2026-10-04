@@ -1,6 +1,6 @@
 # From Forecasts to Stock Decisions
 
-Probabilistic safety-stock design across Walmart stores using the M5 dataset.
+### Project Title: Probabilistic safety-stock design across Walmart stores using the M5 dataset.
 
 This project is part of the AAI 500 Probability and Statistics for AI course in the Master of Science (M.S) in Applied Artificial Intelligence program at the University of San Diego.
 
