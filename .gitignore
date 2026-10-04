@@ -1,0 +1,19 @@
+# Python environments and generated files
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local editor and operating-system files
+.DS_Store
+.vscode/
+
+# M5 source data and generated datasets
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
+
+# Generated report figures
+reports/figures/*
+!reports/figures/.gitkeep
