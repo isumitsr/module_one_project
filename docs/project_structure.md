@@ -10,7 +10,7 @@ This document explains how the repository is organized. It should be updated whe
 | `scripts/` | Contains commands used to set up or maintain the local project. | The Kaggle download and verification helper. | Scripts must be safe to rerun, must not store credentials, and must validate external files before analysis. |
 | `src/` | Contains reusable Python code shared by notebooks. | Data preparation, forecasting, simulation, and evaluation helpers. | Move code here only when reuse improves clarity. Keep the notebooks readable and do not hide essential statistical reasoning from the reader. |
 | `reports/` | Stores written project outputs. | Draft or final reports and supporting material. | Report claims must agree with executed notebook evidence. Clearly distinguish observed M5 sales from simulated inventory outcomes. |
-| `reports/figures/` | Stores figures exported for reports and presentations. | Final charts and diagrams generated from notebooks. | Figures should have descriptive filenames, titles, labels, units, and a traceable notebook source. Generated figures are excluded from Git by default. |
+| `reports/figures/` | Stores figures exported for reports and presentations. | Clear charts and diagrams generated from notebooks. | Commit only figures that are used in a report. Each figure should have a clear filename, title, labels, units, and a traceable notebook source. |
 | `docs/` | Stores technical project documentation. | Folder guides, data decisions, method specifications, assumptions, and evaluation definitions. | Update documentation as the implementation changes. Clearly separate completed work from planned work. |
 
 ## Root files
